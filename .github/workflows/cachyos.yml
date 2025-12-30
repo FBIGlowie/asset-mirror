@@ -42,7 +42,8 @@ jobs:
 
     - name: Compare tag
       id: compare
-      run: ./build.sh compare ${{ env.GITHUB_TAG }}
+      run: |
+        echo ${{ env.GITHUB_TAG }} ; ./build.sh compare ${{ env.GITHUB_TAG }}
       continue-on-error: true
 
     - name: Build if newer tag is available
